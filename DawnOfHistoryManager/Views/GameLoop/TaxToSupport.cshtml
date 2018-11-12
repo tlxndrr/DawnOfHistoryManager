@@ -1,0 +1,26 @@
+﻿@model DawnOfHistoryManager.Models.ViewModels.TaxToSupportInput
+
+@{
+    ViewData["Title"] = "Tax To Support";
+}
+
+<h2>@ViewBag.GameName</h2>
+
+<h4>Tax To Support Phases</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ResolveTaxToSupport">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Cities" class="control-label"></label>
+                <input asp-for="Cities" class="form-control" />
+                <span asp-validation-for="Cities" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Cities Owned" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

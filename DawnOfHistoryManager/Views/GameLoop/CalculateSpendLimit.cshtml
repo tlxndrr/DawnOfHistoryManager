@@ -1,0 +1,56 @@
+﻿@model DawnOfHistoryManager.Models.ActiveCiv
+
+@{
+    ViewData["Title"] = "Calculate Spend Limit";
+}
+
+<h2>CalculateSpendLimit</h2>
+
+<h4>ActiveCiv</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CalculateSpendLimit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CivId" class="control-label"></label>
+                <select asp-for="CivId" class="form-control" asp-items="ViewBag.CivId"></select>
+                <span asp-validation-for="CivId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameName" class="control-label"></label>
+                <input asp-for="GameName" class="form-control" />
+                <span asp-validation-for="GameName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cities" class="control-label"></label>
+                <input asp-for="Cities" class="form-control" />
+                <span asp-validation-for="Cities" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AstPosition" class="control-label"></label>
+                <input asp-for="AstPosition" class="form-control" />
+                <span asp-validation-for="AstPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentPhase" class="control-label"></label>
+                <input asp-for="CurrentPhase" class="form-control" />
+                <span asp-validation-for="CurrentPhase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpendLimit" class="control-label"></label>
+                <input asp-for="SpendLimit" class="form-control" />
+                <span asp-validation-for="SpendLimit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

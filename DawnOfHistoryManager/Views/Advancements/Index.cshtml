@@ -1,0 +1,116 @@
+﻿@model IEnumerable<DawnOfHistoryManager.Models.Advancement>
+
+@{
+    ViewData["Title"] = "Advancements";
+}
+
+<h2>Advancements</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BaseCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Points)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsArt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCivic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCraft)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsReligion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsScience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditArt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditCivic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditCraft)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditReligion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditScience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditAdvancement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreditAdvancementValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsArt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCivic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCraft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsReligion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsScience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditArt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditCivic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditCraft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditReligion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditScience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditAdvancement.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreditAdvancementValue)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

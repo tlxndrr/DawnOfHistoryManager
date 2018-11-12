@@ -1,0 +1,130 @@
+﻿@model DawnOfHistoryManager.Models.Advancement
+
+@{
+    ViewData["Title"] = "Advancement Details";
+}
+
+<h2>Advancement Details</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BaseCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Points)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Points)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsArt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsArt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCivic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsCivic)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCraft)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsCraft)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsReligion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsReligion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsScience)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsScience)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditArt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditArt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditCivic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditCivic)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditCraft)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditCraft)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditReligion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditReligion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditScience)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditScience)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditAdvancement)
+        </dt>
+        <dd>
+            @if (null != Model.CreditAdvancement)
+            {
+                <a asp-action="Details" asp-route-id="@Model.CreditAdvancement.Id">
+                    @Html.DisplayFor(model => model.CreditAdvancement.Name)
+                </a>
+            }
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditAdvancementValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditAdvancementValue)
+        </dd>
+    </dl>
+</div>
+@if (null != Model.Abilities)
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Abilities)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Abilities)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RulesText)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

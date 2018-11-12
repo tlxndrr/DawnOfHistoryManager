@@ -1,0 +1,19 @@
+﻿@model DawnOfHistoryManager.Models.ActiveCiv
+
+@{
+    ViewData["Title"] = "Move AST";
+}
+
+<h2>@Html.DisplayFor(model => model.GameName)</h2>
+
+<h4>Move AST Phase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <p>@ViewBag.MovementMessage@Model.AstPosition</p>
+
+        <a asp-action="Index" class="btn btn-default">Continue</a>
+    </div>
+</div>
+
+

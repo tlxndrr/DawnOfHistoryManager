@@ -1,0 +1,54 @@
+﻿@model DawnOfHistoryManager.Models.ActiveCiv
+
+@{
+    ViewData["Title"] = "Game Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ActiveCiv</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GameName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GameName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Civ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Civ.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cities)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cities)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AstPosition)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AstPosition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentPhase)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrentPhase)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpendLimit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpendLimit)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="GameLoop" asp-action="Index" asp-route-id="@Model.Id">Resume</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

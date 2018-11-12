@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Games</h2>
+        <ul>
+            <li><a asp-area="" asp-controller="ActiveCivs" asp-action="Index">Resume a game</a></li>
+            <li><a asp-area="" asp-controller="ActiveCivs" asp-action="Create">Create a new game</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <h2>Reference</h2>
+        <ul>
+            <li><a asp-area="" asp-controller="Advancements" asp-action="Index">Advancements</a></li>
+        </ul>
+    </div>
+</div>

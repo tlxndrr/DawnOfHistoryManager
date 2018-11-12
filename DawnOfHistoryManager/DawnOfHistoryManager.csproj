@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-DawnOfHistoryManager-49EF2F62-98E9-4716-B31E-7B6901AE0226</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20181109182352_Iteration1Tables.cs" />
+    <Compile Remove="Migrations\20181109182352_Iteration1Tables.Designer.cs" />
+    <Compile Remove="Migrations\20181109192554_Iteration1Tables.cs" />
+    <Compile Remove="Migrations\20181109192554_Iteration1Tables.Designer.cs" />
+    <Compile Remove="Migrations\20181111183250_Iteration1Seeding.cs" />
+    <Compile Remove="Migrations\20181111183250_Iteration1Seeding.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>

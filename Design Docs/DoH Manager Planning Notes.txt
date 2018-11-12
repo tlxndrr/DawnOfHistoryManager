@@ -1,0 +1,135 @@
+==================
+Iteration 1 Goals:
+==================
+-Automate some basic game book-keeping (Score and AST tracking)
+-Automate standard Advancement management
+
+================
+Iteration 1 ToDo
+================
+Tie Acvive Civs to their users and restrict access to other users' Active Civs
+
+======================
+Iteration 1 Non-goals:
+======================
+-Multi-player game management
+-Proper handling when purchasing the following Advancements:
+	-Anatomy (When purchased, immediately buy up to two additional Science advances valued under 100 trade cost)
+	-Library (When purchased, grants a 40 point discount to any one other Advancement purchased simultaneously with Library)
+	-Written Record (When purchased, provides a total of 5 points of credit in any color, in addition to usual credit)
+	-Monument (When purchased, provides a total of 10 points of credit in any combination of colors, in addition to usual credit)
+	-Wonder of the World (When purchased, provides a total of 20 points of credit in any combination of colors, in addition to usual credit)
+-Trade card management, including the cross East/West set bonus
+-Calamity management
+-Automated reminders/tracking for active abilities
+-Sophisticated UI design
+-Security
+These items are deferred to later iterations
+
+========
+Pre-game
+========
+	-Player management [Identity Scaffold]
+	-Continue Game
+		-Select game in progress: resume game loop for that game
+	-Create Game
+		-Select civilization
+		-Enter game loop
+
+=========
+Game Loop
+=========
+Collect Taxes through second Check for City Support
+	-Enter new city count
+
+Acquire Civilization Cards & return excess trade cards
+	-Enter total trade value of trade cards and treasury ("spend limit")
+	-Select Civ Advancements to buy
+		-An advancement may only be selected if discounted cost + "cart total" <= spend limit
+		-Selected advancement adds discounted cost to "cart total" and displays
+		-Once all techs are selected, "Buy Selected Advancements"
+		-[System updates list of owned advancements]
+	-<Out of System: cash in trade cards and treasury as appropriate, discard excess trade cards>
+
+Move AST Markers
+	-Verify Current Position (& derive move requirements)
+	-Verify required city and techs
+	-If verified, move one space, otherwise, remain in place
+	At end of phase, if the civ is at the end of the AST, end the game
+	
+===========
+End of Game
+===========
+	Display Final point tally
+	
+=================
+Pop-out reference
+=================
+Civilization Status
+	-AST status
+	-Cities owned
+	-Score
+	-Credits toward Advancement types
+	-Abilities from owned Advancements
+	-Owned Advancements
+Advancement Reference
+	List page
+		Limited data for all advancements
+		Link to advancement detail page
+	Detail page
+		All data for selected advancement
+		All abilities for selected advancement
+
+=====
+Views
+=====
+Setup
+-----
+Sign In - [Identity Scaffold]
+
+Game Selection (Also serves as index when logged in)
+	Inputs:
+		Links to available games (Go to current Phase page for that game)
+		Button: Create Game (Go to Game Setup)
+		
+Game Setup
+	Inputs:
+		Text Box: Game name
+		Combo box: Civilizations
+	On Submit: go to Phases 1-14 for that game
+
+Main Game Loop
+--------------
+Phases 1-14 (Taxes thru second city support check)
+	Inputs:
+		Text Box (Numeric; 0-9): New City Count
+		Button: Done
+	Next view: Phase 15-1
+
+Phase 15.1 (Acquire Civilization Cards: Determine Spending Limit)
+	Inputs:
+		Text Box Set (Numeric): Total trade card value
+			One box per trade good, arranged in rows by value
+		Text Box (Numeric): Treasury
+		Button: Buy Advancements (Go to Phase 15-2)
+
+Phase 15.2 (Acquire Civilization Cards: Buy Advancements)
+	Inputs:
+		Table:
+			-Checkbox to mark advancements selected for purchase
+			-Advancements (Include Name, Discounted cost, point value, provided credit amounts, link for abilities)
+		Button: Buy Selected Advancements
+	Next view: Phase 16
+
+Phase 16
+	Outputs:
+		Report new AST situation
+	Inputs:
+		Button: Ready for Next Turn / Go to End of Game (as appropriate)
+	Next view: Phases 1-14 -OR- End of Game
+	
+Game Finished
+-------------
+Results
+	Shows data from Civilization Status page
+	Button to go to Game Selection page
